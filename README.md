@@ -1,2 +1,1 @@
-# KTV-Rewind
-Backtesting Software
+# REWIND Backtesting
