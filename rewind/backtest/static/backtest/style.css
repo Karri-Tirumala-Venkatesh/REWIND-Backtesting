@@ -1,0 +1,179 @@
+body, html { 
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', Arial, sans-serif;
+    color: #fff;
+    overflow-x: hidden;
+}
+
+/* --- Video Background --- */
+.video-background {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw; height: 100vh;
+    z-index: -1;
+    overflow: hidden;
+}
+.video-background video {
+    width: 100vw; height: 100vh;
+    object-fit: cover;
+}
+
+/* --- Header Bar --- */
+.header-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px;
+    position: relative;
+    z-index: 2;
+    flex-wrap: wrap;
+    background: #000;
+}
+
+.logo-box {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+.logo-box img {
+    height: 64px;
+    width: 64px;
+}
+.logo-title {
+    font-weight: 600;
+    font-family: "Montserrat", serif;
+    font-size: 2rem;
+}
+
+/* --- Menu & Back Buttons --- */
+.menu-box, .back-box {
+    display: flex;
+    align-items: center;
+    border: 1px solid #fff;
+    padding: 16px 32px;
+    border-radius: 3px;
+    background: transparent;
+    font-family: 'Playfair Display', serif;
+    font-weight: bold;
+    color: #fff;
+    font-size: 2rem;
+    cursor: pointer;
+    margin-left: 24px;
+}
+.menu-title, .back-title {
+    margin-right: 24px;
+}
+.menu-icon, .back-icon {
+    font-size: 2.2rem;
+    font-weight: bold;
+}
+
+/* Position Back Button if needed */
+.back-box {
+    position: absolute;
+    top: 24px;
+    right: 180px; /* Adjust if overlaps */
+    z-index: 10;
+}
+
+/* --- Main Content --- */
+.main-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 80vh;
+    text-align: center;
+    z-index: 1;
+    position: relative;
+    padding-top: 120px; /* Add this line for vertical space */
+    padding-left: 32px;
+    padding-right: 32px;
+    box-sizing: border-box;
+}
+.main-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 6vw;
+    font-weight: 900;
+    margin: 0 0 160px 0; /* Increased bottom margin for more space */
+    line-height: 1.05;
+    text-shadow: 0 0 8px rgba(0,0,0,0.6); /* Ensures readability over video */
+}
+.main-desc {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 48px;
+    text-shadow: 0 0 6px rgba(0,0,0,0.5);
+}
+
+.sidebar {
+    
+            width: 23vw;
+            height: 80vh;
+            background: #000000;
+            padding: 40px 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            border-right: 1px solid #000000;
+            padding: 5vw;
+        }
+
+        .logo {
+            font-weight: 600;
+    font-family: "Montserrat", serif;
+    font-size: 2rem;
+        }
+
+        .menu-item {
+            font-size: 18px;
+            opacity: 0.6;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+        .menu-item.active, .menu-item:hover {
+            opacity: 1;
+        }
+
+
+
+/* --- Responsive Styles --- */
+@media (max-width: 900px) {
+    .main-title { font-size: 9vw; }
+    .header-bar { padding: 16px; }
+}
+@media (max-width: 800px) {
+    .header-bar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+        padding: 20px;
+    }
+    .menu-box, .back-box {
+        padding: 10px 18px;
+        font-size: 1.5rem;
+        margin-left: 10px;
+    }
+    .menu-title, .back-title {
+        margin-right: 10px;
+    }
+    .menu-icon, .back-icon {
+        font-size: 1.5rem;
+    }
+}
+@media (max-width: 600px) {
+    .main-title { font-size: 11vw; }
+    .header-bar { padding: 8px; }
+    .main-content {
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+    .card-container {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+

@@ -1,0 +1,27 @@
+{% extends 'backtest/layout.html' %}
+{% load static %}
+{% block content %}
+    <div class="video-background">
+        <video autoplay loop muted playsinline>
+            <source src="{% static 'backtest/background.mp4' %}" type="video/mp4">
+        </video>
+    </div>
+    <div class="header-bar">
+        <div class="logo-box">
+            <img src="{% static 'backtest/icon.png' %}" alt="Logo">
+            <span class="logo-title">REWIND Backtesting</span>
+        </div>
+    </div>
+    <div class="main-content">
+        <div class="main-title">
+            Backtest your strategies<br>with no code, using<br>REWIND Backtesting
+        </div>
+    </div>
+
+    <!-- Bottom Center Button -->
+    <div style="position: fixed; left: 0; right: 0; bottom: 40px; display: flex; justify-content: center; z-index: 10;">
+        <a href="{% url 'backtest:strategy' %}" style="background: #0500ff; color: #fff; font-family: 'Montserrat', Arial, sans-serif; font-size: 1.2rem; font-weight: 600; border: none; border-radius: 8px; padding: 18px 48px; text-decoration: none; box-shadow: 0 4px 24px rgba(0,0,0,0.18); transition: background 0.2s;">
+            Start Backtesting
+        </a>
+    </div>
+{% endblock %}

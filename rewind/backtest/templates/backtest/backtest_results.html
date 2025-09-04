@@ -1,0 +1,39 @@
+{% extends "backtest/layout.html" %}
+{% load static %}
+{% block content %}
+<div class="header-bar">
+    <div class="logo-box">
+        <span class="logo-title">Backtesting Results</span>
+    </div>
+    <div style="display: flex; gap: 24px;">
+        <div class="menu-box" onclick="window.history.back()">
+            <span class="menu-title">Back</span>
+            <span class="back-icon">&#8592;</span>
+        </div>
+    </div>
+</div>
+
+
+<section style="background: radial-gradient(ellipse at top left, #181818 60%, #111 100%); min-height: 60vh; display: flex; align-items: center;">
+    <div style="max-width: 1100px; margin: 0 auto; padding: 60px 40px;">
+        <h2 style="margin-top:2rem; font-weight:600;">Strategy Name : {{ strategy_name }}</h2>
+
+        <h3 style="margin-top:2rem; font-weight:600;">Report</h3>
+        <pre style="background:#232323; color:#fff; padding:1rem; border-radius:8px; font-size:1rem;">{{ report }}</pre>
+
+        {% if plot_url %}
+            <h3 style="margin-top:2rem; font-weight:600;">Performance Plot</h3>
+            <img src="{{ MEDIA_URL }}{{ plot_url }}" alt="Backtest Plot" style="max-width:100%; border-radius:8px; border:1px solid #333;">
+            <br>
+            <a href="{{ MEDIA_URL }}{{ plot_url }}" download style="color:#00e6b8; text-decoration:underline; font-weight:500;">Download Plot</a>
+        {% endif %}
+
+        <h3 style="margin-top:2rem; font-weight:600;">Generated Code</h3>
+        <textarea style="width:100%;min-height:300px;font-family:monospace;font-size:1rem;background:#232323;color:#fff;border-radius:8px;border:1px solid #333; padding:1rem;" readonly>{{ code }}</textarea>
+        <p style="font-size: 1.3rem; color: #b3b3b3; font-family: 'Montserrat', Arial, sans-serif; line-height: 1.6; font-weight: 400;">
+            Please do remember that, the project is yet in development stage. Hence it is recomended not to solely depend on the generated code, but also try to tweak the python code, and refine it from your end also.<br>
+        </p>
+    </div>
+</section>
+
+{% endblock %}
